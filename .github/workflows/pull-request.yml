@@ -3,12 +3,12 @@ on:
   pull_request:
     branches: [master]
     types: [opened, edited, synchronize]
-  jobs:
-    check-conventional-commit:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@2
-        - name: check-conventional-commit
-          id: cc-by-pr
-          uses: ns8482e/hello-action/actions/ccbypr@v5
+jobs:
+  check-conventional-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@2
+      - name: check-conventional-commit
+        id: cc-by-pr
+        uses: ns8482e/hello-action/actions/ccbypr@v5
