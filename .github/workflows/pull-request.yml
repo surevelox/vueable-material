@@ -4,7 +4,7 @@ on:
     branches: [master]
     types: [opened, edited, synchronize]
   jobs:
-    check-conventional-commit
+    check-conventional-commit:
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
