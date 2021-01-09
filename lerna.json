@@ -1,4 +1,9 @@
 {
+  "command": {
+    "version": {
+      "conventionalCommits": true
+    }
+  },
   "packages": [
     "src/*",
     "docs"
