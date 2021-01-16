@@ -44,11 +44,15 @@ jobs:
       - name: Build Documentation
         run: npm run build:docs
 
+        
       - name: Publish Documentation
         run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git fetch docs:refs/remotes/origin/docs
           git checkout docs
           node build/rename.js
+          git add -A
           git commit -m "docs: Update Documentation"
           git push
         with:
