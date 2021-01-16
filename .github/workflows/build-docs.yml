@@ -55,6 +55,4 @@ jobs:
           git add -A
           git commit -m "docs: Update Documentation"
           git push
-        with:
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
