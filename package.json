@@ -6,8 +6,9 @@
     "build": "lerna run build --parallel",
     "lint": "lerna run lint --parallel",
     "bootstrap": "lerna bootstrap --hoist",
+    "clean:docs":"node ./build/clean.js ",
     "dev:docs": "lerna run dev:docs --parallel --scope=docs",
-    "build:docs": "lerna run build:docs --parallel --scope=docs"
+    "build:docs": "npm run clean:docs && lerna run build:docs --parallel --scope=docs"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
