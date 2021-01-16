@@ -46,7 +46,7 @@ jobs:
 
       - name: Publish Documentation
         run: |
-          git checkout docs
+          git checkout -B docs
           node build/rename.js
           git commit -m "docs: Update Documentation"
           git push
