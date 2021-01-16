@@ -51,3 +51,6 @@ jobs:
           node build/rename.js
           git commit -m "docs: Update Documentation"
           git push
+        with:
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
