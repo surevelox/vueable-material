@@ -7,8 +7,8 @@ name: "Build Documentation"
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
-  paths:
+    branches: [ master ]    
+    paths:
       - '.github/workflows/build-docs.yml'
       - 'docs/**/*.md'
       - 'docs/.vuepress/**/*.js'
