@@ -3,6 +3,7 @@ module.exports = {
     description: 'Just playing around',
 
     base : '/vueable-material/',
+    dest: '../.wwwroot',
 
     themeConfig: {
         nav: [
