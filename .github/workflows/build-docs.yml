@@ -3,12 +3,12 @@
 name: "Build Documentation"
 
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ ci/build-docs ]
-    
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -24,6 +24,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Setup node
         uses: actions/setup-node@v1
@@ -31,15 +33,20 @@ jobs:
           node-version: '14'
           registry-url: https://registry.npmjs.org/
       - name: Install dependencies
-        run: |
-          npm install
+        run: npm install
+
       - name: Bootstrap Lerna
-        run: |
-          npm run bootstrap
+        run: npm run bootstrap
+
       - name: Build Packages
-        run: |
-          npm run build
+        run: npm run build
+
       - name: Build Documentation
+        run: npm run build:docs
+
+      - name: Publish Documentation
         run: |
-          npm run build:docs
-      
+          git checkout docs
+          node build/rename.js
+          git commit -m "docs: Update Documentation"
+          git push
