@@ -5,7 +5,7 @@
     "author": "Niraj Soni",
     "scripts": {
         "serve": "vue-cli-service build --name index --target lib ./index.ts",
-        "build": "vue-cli-service build --mode production --name index --target lib index.ts",
+        "build:dist": "vue-cli-service build --mode production --name index --target lib index.ts",
         "build:esm": "tsc",
         "lint": "vue-cli-service lint",
         "lint:fix": "vue-cli-service lint --fix",
