@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "serve": "lerna run serve --parallel --concurrency 100",
-    "build": "lerna run build --parallel",
+    "build:dist": "lerna run build:dist --parallel",
+    "build:esm": "lerna run build:esm --parallel",
+    "build": "npm run build:dist && npm run build:esm",
     "lint": "lerna run lint --parallel",
     "bootstrap": "lerna bootstrap --hoist",
     "clean:docs":"node ./build/clean.js ",
