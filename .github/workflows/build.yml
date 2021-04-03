@@ -2,25 +2,23 @@
 
 name: "Build Pull Request"
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   pull_request_target:
-    branches: [ master ]
+    branches: [master]
     types:
       - opened
       - reopened
       - edited
-      - synchronize 
-  
-
+      - synchronize
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  Build:
+  install:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -29,20 +27,36 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
           registry-url: https://registry.npmjs.org/
-      
       - name: Install dependencies
         run: npm ci --ignore-scripts
       - name: Bootstrap Lerna
         run: npm run bootstrap
+  lint:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Run after
+    needs: install
+    steps:
       - name: Lint Source
         run: npm run lint
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Run after
+    needs: install
+    steps:
       - name: Build Packages
         run: npm run build
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # Run after
+    needs: install
+    steps:
+      - name: Run unit tests
+        run: npm run test
