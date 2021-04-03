@@ -42,6 +42,17 @@ jobs:
     # Run after
     needs: install
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Bootstrap Lerna
+        run: npm run bootstrap
       - name: Lint Source
         run: npm run lint
   build:
@@ -50,6 +61,17 @@ jobs:
     # Run after
     needs: install
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Bootstrap Lerna
+        run: npm run bootstrap
       - name: Build Packages
         run: npm run build
   test:
@@ -58,5 +80,16 @@ jobs:
     # Run after
     needs: install
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Bootstrap Lerna
+        run: npm run bootstrap
       - name: Run unit tests
         run: npm run test
