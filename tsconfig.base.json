@@ -1,0 +1,43 @@
+{
+    "compilerOptions": {
+      "declaration": true,
+      "downlevelIteration": true,
+      "emitDecoratorMetadata": true,
+    
+      "newLine": "lf",
+      "noEmitOnError": false,
+      "noErrorTruncation": true,
+      "noFallthroughCasesInSwitch": true,
+      "noStrictGenericChecks": true,
+      "preserveConstEnums": true,
+      "pretty": true,
+      "stripInternal": true,
+      "importsNotUsedAsValues": "preserve",
+
+      "target": "ES2017",
+      "module": "ES2015",
+      "strict": true,
+      "jsx": "preserve",
+      "importHelpers": true,
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,      
+      "types": [
+        "webpack-env",
+        "jest"
+      ],      
+      "lib": [
+        "ES2017",
+        "dom",
+        "dom.iterable",
+        "scripthost"
+      ]
+    },    
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  

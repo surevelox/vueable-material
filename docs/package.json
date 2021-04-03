@@ -7,6 +7,6 @@
         "build:docs": "vuepress build"
     },
     "devDependencies": {
-        "vuepress": "^1.5.3"
+        "vuepress": "^1.7.1"
       }
 }
