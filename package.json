@@ -8,7 +8,7 @@
     "build": "npm run build:dist && npm run build:esm",
     "lint": "lerna run lint --parallel",
     "bootstrap": "lerna bootstrap --hoist",
-    "clean:docs":"node ./build/clean.js ",
+    "clean:docs": "node ./build/clean.js ",
     "dev:docs": "lerna run dev:docs --parallel --scope=docs",
     "build:docs": "npm run clean:docs && lerna run build:docs --parallel --scope=docs"
   },
