@@ -35,7 +35,7 @@ jobs:
         run: npm run bootstrap
       - name: Build
         run: npm run build
-       - name: Create canary release
+      - name: Create canary release
         run: |
           lerna version premajor --no-git-tag-version --no-push --preid canary.$(git rev-parse --short HEAD) --yes --exact
           git config --local user.email "action@github.com"
