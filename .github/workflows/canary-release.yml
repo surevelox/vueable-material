@@ -1,0 +1,44 @@
+name: Canary Release
+
+# Creates a pre-release and publishes packages to NPM with canary
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "packages/**/*.ts"
+      - "**/package*.json"
+      - "**/.npmignore"
+jobs:
+  canary-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+          registry-url: https://registry.npmjs.org/
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: Bootstrap Lerna
+        run: npm run bootstrap
+      - name: Bootstrap Lerna
+        run: npm run bootstrap
+      - name: Build
+        run: npm run build
+       - name: Create canary release
+        run: |
+          lerna version premajor --no-git-tag-version --no-push --preid canary.$(git rev-parse --short HEAD) --yes --exact
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -am "chore: Publish"
+      - name: Publish to NPM registry with canary tag
+        run: lerna publish from-package --yes --dist-tag canary
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

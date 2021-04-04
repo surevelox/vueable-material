@@ -2,3 +2,4 @@
 !*.d.ts
 __test__/**
 dist/demo.html
+tsconfig.json
