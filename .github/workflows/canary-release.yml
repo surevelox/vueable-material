@@ -7,7 +7,7 @@ on:
     branches:
       - master
     paths:
-      - "packages/**/*.ts"
+      - "src/**/*.ts"
       - "**/package*.json"
       - "**/.npmignore"
 jobs:
