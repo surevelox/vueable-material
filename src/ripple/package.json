@@ -15,9 +15,6 @@
     "main": "dist/index.umd.js",
     "module": "index.js",
     "types": "index.d.ts",
-    "files": [
-        "dist"
-    ],
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.33.0",
         "@typescript-eslint/parser": "^2.33.0",
@@ -33,11 +30,7 @@
     "bugs": {
         "url": "https://github.com/surevelox/vueable-material/issues"
     },
-    "directories": {
-        "lib": "dist",
-        "test": "__tests__"
-    },
-    "homepage": "https://github.com/surevelox/vueable-material",
+    "homepage": "https://surevelox.github.io/vueable-material/",
     "keywords": [
         "material",
         "ripple",
