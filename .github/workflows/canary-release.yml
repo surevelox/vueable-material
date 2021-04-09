@@ -45,6 +45,6 @@ jobs:
           git config --local user.name "GitHub Action"
           git commit -am "chore: Publish"
       - name: Publish to NPM registry
-        run: npx lerna publish from-package --yes --dist-tag canary --dist-tag latest
+        run: npx lerna publish from-package --yes
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
