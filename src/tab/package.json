@@ -1,0 +1,55 @@
+{
+    "name": "@vueable-material/tab",
+    "version": "0.0.0",
+    "description": "Material Tab - Vue directive",
+    "author": "Niraj Soni",
+    "scripts": {
+        "serve": "vue-cli-service build --name index --target lib ./index.ts",
+        "build:dist": "vue-cli-service build --mode production --name index --target lib index.ts",
+        "build:esm": "tsc",
+        "lint": "vue-cli-service lint",
+        "lint:fix": "vue-cli-service lint --fix"
+    },
+    "main": "dist/index.umd.js",
+    "module": "index.js",
+    "types": "index.d.ts",
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.33.0",
+        "@typescript-eslint/parser": "^2.33.0",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-typescript": "~4.5.0",
+        "@vue/eslint-config-prettier": "^6.0.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-prettier": "^3.1.3",
+        "eslint-plugin-vue": "^6.2.2",
+        "prettier": "^1.19.1"
+    },
+    "bugs": {
+        "url": "https://github.com/surevelox/vueable-material/issues"
+    },
+    "homepage": "https://surevelox.github.io/vueable-material/",
+    "keywords": [
+        "material",
+        "tab",
+        "vue"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/surevelox/vueable-material.git",
+        "directory": "src/tab"
+    },
+    "peerDependencies": {
+        "@material/dom": "^7.0.0",
+        "@material/tab": "^7.0.0",
+        "@material/tab-bar": "^7.0.0",
+        "@material/tab-indicator": "^7.0.0",
+        "@material/tab-scroller": "^7.0.0",
+        "core-js": "^3.6.5",
+        "vue": "^2.6.11"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
