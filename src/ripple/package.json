@@ -8,9 +8,7 @@
         "build:dist": "vue-cli-service build --mode production --name index --target lib index.ts",
         "build:esm": "tsc",
         "lint": "vue-cli-service lint",
-        "lint:fix": "vue-cli-service lint --fix",
-        "format": "prettier --write **/*.ts",
-        "format-check": "prettier --check **/*.ts"
+        "lint:fix": "vue-cli-service lint --fix"
     },
     "main": "dist/index.umd.js",
     "module": "index.js",
