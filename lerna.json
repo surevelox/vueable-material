@@ -1,12 +1,9 @@
 {
-  "command": {
-    "version": {
-      "conventionalCommits": true
-    }
-  },
-  "packages": [
-    "src/*",
-    "docs"
-  ],
-  "version": "0.0.0"
+    "command": {
+        "version": {
+            "conventionalCommits": true
+        }
+    },
+    "packages": ["src/*", "docs"],
+    "version": "0.0.0"
 }

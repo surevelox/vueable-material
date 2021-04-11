@@ -7,6 +7,6 @@ async function deleteDir(path) {
         throw error;
     }
 }
-(async function (path) {
+(async function(path) {
     await deleteDir('./.wwwroot');
 })();

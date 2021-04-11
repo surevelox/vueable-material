@@ -1,0 +1,9 @@
+docs/.temp
+.wwwroot
+.gitignore
+.prettierignore
+**/*.log
+LICENSE
+**/package-lock.json
+**/.npmignore
+*.map
